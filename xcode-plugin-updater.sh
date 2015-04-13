@@ -60,7 +60,7 @@ XCODE_UUID=""
 function start
 {
 	echo ""
-	echo "${BOLD}${UNDER}${GREEN}$(basename ${0##*/})${COLOREND}"
+	echo "${BOLD}${UNDER}${GREEN}xcode-plugin-updater.sh${COLOREND}"
 	echo ""
 }
 
@@ -74,8 +74,7 @@ function end
 
 function usage
 {
-	F_NAME=`basename ${0##*/}`
-	echo "usage: ${F_NAME} [-u UUID] [help]"
+	echo "usage: xcode-plugin-updater.sh [-u UUID] [help]"
 }
 
 # --------------------------------
@@ -131,7 +130,7 @@ function updatePlugins
 
 		# Done
 		echo "${GREEN}✓ [$(basename "${plugin}")]${COLOREND} Plugin updated successfully."
-		
+
 	done < <(find "${P_PLUGIN_DIR}" -maxdepth 1 -name "*.xcplugin" -print0)
 }
 
