@@ -11,8 +11,8 @@ So, what it means is that it can be fixed just by adding the new UUID to the `In
 ## Usage
 
 1. Open Terminal.app (or similar) on your Mac
-2. Run the following command:
-	`curl -fsSL https://raw.github.com/dynamicdust/xcode-plugin-updater/master/xcode-plugin-updater.sh | bash`
+2. Run the following command  
+	`curl -fsSL http://git.io/vvZMn | bash`
 3. All your plugins are now updated
 
 ## Roadmap
