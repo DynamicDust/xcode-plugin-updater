@@ -10,16 +10,23 @@ So, what it means is that it can be fixed just by adding the new UUID to the `In
 
 ## Usage
 
+#### Updating
 1. Open Terminal.app (or similar) on your Mac
 2. Run the following command  
 	`curl -fsSL http://git.io/vvZMn | bash`
 3. All your plugins are now updated
 
+#### Printing Xcode's UUID
+1. Open Terminal.app (or similar) on your Mac
+2. Run the following command  
+	`curl -fsSL http://git.io/vvZMn | bash -s print`
+3. The UUID is copied to your clipboard and also printed to the command line
+
 ## Roadmap
 
 - [x] First version
 - [ ] Add compatibility for `sh` and `zsh` (currently only works with `bash`)
-- [ ] Print Xcode UUID (useful for developers)
+- [x] Print Xcode UUID (useful for developers)
 - [ ] Suggestions?
 
 ## Contribution
