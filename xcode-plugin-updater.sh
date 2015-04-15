@@ -61,7 +61,6 @@ function start
 {
 	echo ""
 	echo "${BOLD}${UNDER}${GREEN}xcode-plugin-updater.sh${COLOREND}"
-	echo ""
 }
 
 function end
@@ -74,7 +73,7 @@ function end
 
 function usage
 {
-	echo "usage: xcode-plugin-updater.sh [-u UUID] [help]"
+	echo "usage: xcode-plugin-updater.sh [-u UUID] [help] [print]"
 }
 
 # --------------------------------
@@ -162,7 +161,7 @@ function getUUID
 		# New line is added in between both find results here
 		X_VERSIONS="$X_VER_1
 		$X_VER_2"
-	elif (( $X_VER_1_COUNT >= "1" && $X_VER_2_COUNT == 0 )); then
+	elif (( $X_VER_1_COUNT >= 1 && $X_VER_2_COUNT == 0 )); then
 		X_VERSIONS="${X_VER_1}"
 	else
 		X_VERSIONS="${X_VER_2}"
@@ -233,6 +232,27 @@ function getUUID
 }
 
 # --------------------------------
+
+function printUUID
+{
+	start
+
+	# Check if PlistBuddy is available
+	command -v "$PLIST" > /dev/null || dependencyIsMissing "PlistBuddy"
+
+	# Get the UUID
+	getUUID
+
+	# Copy to the clipboard
+	echo "${XCODE_UUID}" | pbcopy
+
+	# Print it
+	echo "${BOLD}Xcode UUID:${COLOREND} ${XCODE_UUID}"
+	echo "(copied to your clipboard)"
+	echo ""
+}
+
+# --------------------------------
 # MAIN
 # --------------------------------
 
@@ -242,6 +262,9 @@ if [[ $# == 1 ]]; then
 	if [[ "$1" == "help" ]]; then
 		usage
 		exit 0
+	elif [[ "$1" == "print" ]]; then
+		printUUID
+		exit 0
 	else
 		echo "Unkown argument $1."
 		usage
@@ -250,6 +273,7 @@ if [[ $# == 1 ]]; then
 
 elif [[ $# == 2 ]]; then
 	start
+	echo ""
 
 	# Handle two arguments
 	if [[ "$1" == "-u" ]]; then
@@ -265,6 +289,7 @@ elif [[ $# == 2 ]]; then
 
 else
 	start
+	echo ""
 
 	# Check if PlistBuddy is available
 	command -v "$PLIST" > /dev/null || dependencyIsMissing "PlistBuddy"
