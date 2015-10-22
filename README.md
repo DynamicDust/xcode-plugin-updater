@@ -12,15 +12,19 @@ So, what it means is that it can be fixed just by adding the new UUID to the `In
 
 #### Updating
 1. Open Terminal.app (or similar) on your Mac
-2. Run the following command (sorry for this mess, didn't have time to do it properly)  
-	`curl -fsSL http://git.io/vvZMn > $TMPDIR/xcode-plugin-updater.sh && cd $TMPDIR && chmod 755 xcode-plugin-updater.sh && ./xcode-plugin-updater.sh && rm -rf xcode-plugin-updater.sh && cd`
-3. All your plugins are now updated
+2. Run the following command (sorry for this mess, didn't have time to do it properly) and all your plugins will be updated.
+
+```sh
+curl -fsSL http://git.io/vvZMn > $TMPDIR/xcode-plugin-updater.sh && cd $TMPDIR && chmod 755 xcode-plugin-updater.sh && ./xcode-plugin-updater.sh && rm -rf xcode-plugin-updater.sh && cd
+```
 
 #### Printing Xcode's UUID
 1. Open Terminal.app (or similar) on your Mac
-2. Run the following command  
-	`curl -fsSL http://git.io/vvZMn > $TMPDIR/xcode-plugin-updater.sh && cd $TMPDIR && chmod 755 xcode-plugin-updater.sh && ./xcode-plugin-updater.sh print && rm -rf xcode-plugin-updater.sh && cd`
-3. The UUID is copied to your clipboard and also printed to the command line
+2. Run the following command and the UUID will be copied to your clipboard and also printed to the command line!
+
+```sh
+curl -fsSL http://git.io/vvZMn > $TMPDIR/xcode-plugin-updater.sh && cd $TMPDIR && chmod 755 xcode-plugin-updater.sh && ./xcode-plugin-updater.sh print && rm -rf xcode-plugin-updater.sh && cd
+```
 
 ## Roadmap
 
