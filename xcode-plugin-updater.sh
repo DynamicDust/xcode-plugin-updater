@@ -130,7 +130,7 @@ function updatePlugins
 		# Done
 		echo "${GREEN}✓ [$(basename "${plugin}")]${COLOREND} Plugin updated successfully."
 
-	done < <(find "${P_PLUGIN_DIR}" -maxdepth 1 -name "*.xcplugin" -print0)
+	done < <(find "${P_PLUGIN_DIR}/" -maxdepth 1 -name "*.xcplugin" -print0)
 }
 
 # --------------------------------
