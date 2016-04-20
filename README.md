@@ -37,6 +37,6 @@ curl -fsSL http://git.io/vvZMn > $TMPDIR/xcode-plugin-updater.sh && cd $TMPDIR &
 All improvements are welcome. Please, fork the project and then open a pull request to the develop branch.
 
 ## Credits
-Dominik Hádl / [@lobinick](http://twitter.com/lobinick) / [DynamicDust s.r.o](http://www.dynamicdust.com)
+Dominik Hádl / [@dominikhadl](https://twitter.com/dominikhadl) / [DynamicDust s.r.o](http://www.dynamicdust.com)
 
 Created with ♥ in Prague, Czech Republic.
